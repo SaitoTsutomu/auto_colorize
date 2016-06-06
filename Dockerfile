@@ -8,4 +8,5 @@ RUN apt-get update && apt-get install -y wget && \
     rm -r /var/lib/apt/lists/*
 ADD flask.tgz /root/siggraph2016_colorization/
 WORKDIR /root/siggraph2016_colorization
-ENTRYPOINT ["th", "colorize.lua"]
+EXPOSE 8888
+ENTRYPOINT ["python", "runserver.py"]
